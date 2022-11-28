@@ -1,0 +1,110 @@
+﻿﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>Калькулятор</h3>
+
+    <form action="/"
+          method="POST"
+          id="mainForm">
+
+        <!--<label>
+        Стоимость:<br />
+        <input id="field1"
+               placeholder="Ведите стоимость товара" />
+    </label><br />-->
+        <br />
+
+
+
+        <label>
+            Укажите тип товара:
+            <br />
+            <select name="myselect">
+                <option value="1000" id="S1">Плюшевый заяц</option>
+                <option value="2000" id="S2">Машинка</option>
+                <option value="300" id="S3">Детская подушка</option>
+            </select>
+        </label><br />
+
+        <br />
+        <op >
+            <label id="R">
+                Уточните опцию товара:<br />
+                <label>
+                    <input type="radio"
+                           name="radio-group-2" value="1000" id="R1" />
+                    Машинка-трансформер
+                </label><br />
+                <label>
+                    <input type="radio"
+                           name="radio-group-2" value="20000" id="R2" />
+                    Радиоуправляемая
+                </label><br />
+
+                <label>
+                    <input type="radio"
+                           name="radio-group-2" value="3000" id="R3" />
+                    Прыгающая
+                </label><br />
+                <label>
+                    <input type="radio"
+                           name="radio-group-2" value="0" id="R4" />
+                    Без модификаций
+                </label><br />
+                <br />
+            </label>
+
+        </op>
+        <op>
+            <label id="Ch">
+                Уточните доп. свойства товара:<br />
+                <label>
+                    <input type="checkbox"
+                           name="check-1" id="Ch1" />
+                    Подсветка
+                </label><br />
+                <label>
+                    <input type="checkbox"
+                           name="check-2" id="Ch1" />
+                    Нагрев
+                </label><br />
+                <label>
+                    <input type="checkbox"
+                           name="check-3" id="Ch1" />
+                    Доп дизайн
+                </label>
+                <br />
+            </label><br />
+
+        </op>
+        <br />
+        <label>
+            Количество:<br />
+            <input id="field2"
+                   placeholder="Ведите количество товара" />
+        </label><br />
+        <br />
+        <button id="button1" type="button">Отправить</button>
+        <br />
+        <br />
+        <br />
+        <label>
+            Ответ:<br />
+
+            <textarea id="result"
+                      placeholder=" " style="height :16px ; width : 143px"></textarea>
+        </label><br />
+
+        <br />
+    </form>
+
+    <script src="Script1.js"></script>
+</body>
+</html>
