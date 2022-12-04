@@ -1,14 +1,24 @@
 let q;
 let f1 = document.getElementById("field2");
 let R = document.getElementById("result");
-
+let A=0;
+let B;
+let C;
+let i = 0;
+let a1;
+let a2;
+let a3;
 
 window.addEventListener('DOMContentLoaded', function (event) {
     let s = document.getElementsByName("myselect");
+    let radios = document.getElementById("R");
+    radios.style.display = "none";
+    let c = document.getElementsByName("Ch");
+    let cheks = document.getElementById("Ch");
+    cheks.style.display = "none";
     s[0].addEventListener("change", function (event) {
         let select = event.target;
-        let radios = document.getElementById("R");
-        let cheks = document.getElementById("Ch");
+        
         console.log(select.value);
         // Можно использовать getElementsByClassName()
         if (select.value == "300" || select.value=="1000") {
@@ -18,43 +28,94 @@ window.addEventListener('DOMContentLoaded', function (event) {
             radios.style.display = "block";
         }
         if (select.value == "2000" || select.value == "1000") {
+           
             cheks.style.display = "none";
+
         }
         else {
             cheks.style.display = "block";
         }
-    });
+        if (select.value == "300") {
+            i=3;
+        }
+        if (select.value == "2000") {
+            i = 2;
+        }
+        if (select.value == "1000") {
+            i = 1;
+        }
+        B = Number(select.value);
+        // A = 0;
 
-    let r = document.querySelectorAll(".R input[type=radio]");
-    r.forEach(function (radio) {
-        radio.addEventListener("change", function (event) {
-            let r = event.target;
-            q = Number(r.value);
-            console.log(r.value);
-            R.textContent = q;
+
+
+let r = document.getElementsByName("R");
+    
+    if (i == 1) {
+        A = 0;
+       // R.textContent = A;
+        
+    }
+
+        if (i == 2) {
+            A = 0;
+           
+        r[0].addEventListener("change", function (event) {
+            let select2 = event.target;
+            A = Number(select2.value);
+           // R.textContent = select2.value;
         });
+    }
+    if (i == 3) {
+        C = 0;
+
+
+
+
+        c[0].addEventListener("change", function (event) {
+            let select2 = event.target;
+
+            if (select2.checked) {
+                a1 = Number(select2.value);
+            }
+            else {
+                
+                a1 = -1* Number(select2.value);
+            }
+            C = C + a1;
+            if (C < 0) {
+                C = 0;
+            }
+            A = C;
+            //R.textContent = A; 
+            
+            
+        });
+        C=0;
+
+    }
+        //R.textContent = "";
+        
+
+        
+        
     });
 
+ 
 });
-
-
 
 
 function click1() {
     
-    
     let F1 = Math.abs(Number(f1.value));
-    let r1 = document.getElementsById("R");
-    let Ch1 = document.getElementById("Ch");
-    let f2 = Math.abs(Number(r1.value));
-    let select = event.target;
+  
     if (F1 % 10 >= "0" && F1 % 10 <= "9") {
         if (f1.value >= 0) {
-            R.textContent = Number(f1.value) * (Number(r1.value) + select.value);
+            R.textContent = Number(f1.value) * (B+A);
         }
-        else r.textContent = " Not right(< 0 )!!! ";
-    } else r.textContent = "Not numbers !!! ";
-    R.textContent = q;
+        else R.textContent = " Not right(< 0 )!!! ";
+    } else R.textContent = "Not numbers !!! ";
+   /* R.textContent = A;*/
 }
 let buttom = document.getElementById("button1");
 
